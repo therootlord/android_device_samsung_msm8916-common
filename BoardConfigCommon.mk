@@ -80,7 +80,7 @@ TARGET_HAVE_NEW_GRALLOC := true
 TARGET_SWV8_DISK_ENCRYPTION := true
 
 # Healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
+BOARD_HAL_STATIC_LIBRARIES := libhealthd
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/

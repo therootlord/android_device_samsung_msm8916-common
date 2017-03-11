@@ -130,9 +130,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	keystore.msm8916
 
-# libhealthd.qcom
+# libhealthd
 PRODUCT_PACKAGES += \
-	libhealthd.qcom \
 	libhealthd
 
 # Power HAL
