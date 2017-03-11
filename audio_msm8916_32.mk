@@ -39,47 +39,48 @@ TARGET_USES_QCOM_MM_AUDIO := true
 
 USE_XML_AUDIO_POLICY_CONF := 1
 
-CONFIG_PATH := hardware/qcom/audio-caf/msm8916/configs
+#CONFIG_PATH := hardware/qcom/audio-caf/msm8916/configs
 
 # Audio configuration file
-ifeq ($(TARGET_USES_AOSP), true)
-PRODUCT_COPY_FILES += \
-    $(CONFIG_PATH)/common/media/audio_policy.conf:system/etc/audio_policy.conf
-else
-PRODUCT_COPY_FILES += \
-    $(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf
-endif
-# Audio configuration file
-PRODUCT_COPY_FILES += \
-    $(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
-    $(CONFIG_PATH)/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_skul.xml:system/etc/mixer_paths_skul.xml \
-    $(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    $(CONFIG_PATH)/msm8916_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml
-
-ifeq ($(USE_QCOM_MIXER_PATHS), 1)
-PRODUCT_COPY_FILES += \
-    $(CONFIG_PATH)/msm8916_32/mixer_paths.xml:system/etc/mixer_paths.xml
-endif
-
+#ifeq ($(TARGET_USES_AOSP), true)
+#PRODUCT_COPY_FILES += \
+#    $(CONFIG_PATH)/common/media/audio_policy.conf:system/etc/audio_policy.conf
+#else
+#PRODUCT_COPY_FILES += \
+#    $(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf
+#endif
+## Audio configuration file
+#PRODUCT_COPY_FILES += \
+#    $(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
+#    $(CONFIG_PATH)/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_skul.xml:system/etc/mixer_paths_skul.xml \
+#    $(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+#    $(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+#    $(CONFIG_PATH)/msm8916_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml
+#
+#ifeq ($(USE_QCOM_MIXER_PATHS), 1)
+#PRODUCT_COPY_FILES += \
+#    $(CONFIG_PATH)/msm8916_32/mixer_paths.xml:system/etc/mixer_paths.xml
+#endif
+#
 #XML Audio configuration files
 ifeq ($(USE_XML_AUDIO_POLICY_CONF), 1)
-ifeq ($(TARGET_USES_AOSP), true)
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)$(CONFIG_PATH)/common/audio_policy_configuration.xml:/system/etc/audio_policy_configuration.xml
-else
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)$(CONFIG_PATH)/msm8916_32/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
-endif
+#ifeq ($(TARGET_USES_AOSP), true)
+#PRODUCT_COPY_FILES += \
+#    $(TOPDIR)$(CONFIG_PATH)/common/audio_policy_configuration.xml:/system/etc/audio_policy_configuration.xml
+#else
+#PRODUCT_COPY_FILES += \
+#    $(TOPDIR)$(CONFIG_PATH)/msm8916_32/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
+#endif
+
 PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/system/etc/a2dp_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
