@@ -216,6 +216,7 @@ PRODUCT_PACKAGES += \
 	curl \
 	libbson \
 	libcurl \
+	ltrace \
 	javax.btobex \
 	tcmiface \
 	tcpdump \
