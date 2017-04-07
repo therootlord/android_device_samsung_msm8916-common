@@ -59,7 +59,6 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Custom RIL class
 BOARD_RIL_CLASS    := ../../../$(LOCAL_PATH)/ril
-PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
 # prevent sec-ril from building
 BOARD_PROVIDES_LIBRIL := false
@@ -118,7 +117,7 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_MAX_PARTITIONS := 67
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# malloc implementation
+# Malloc implementation
 MALLOC_SVELTE := true
 
 # Bluetooth
