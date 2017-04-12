@@ -74,6 +74,9 @@ PRODUCT_PACKAGES += \
 	libmm-qcamera \
 	camera.msm8916
 
+# Cryptfs
+PRODUCT_PACKAGES += libcryptfs_hw
+
 # Touch issue workaround
 PRODUCT_PACKAGES += \
 	InputDisabler
