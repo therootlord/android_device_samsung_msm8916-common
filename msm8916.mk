@@ -28,6 +28,9 @@ include $(LOCAL_PATH)/audio_msm8916_32.mk
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
+# Include proprietary blobs
+-include $(LOCAL_PATH)/proprietary_blobs.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
