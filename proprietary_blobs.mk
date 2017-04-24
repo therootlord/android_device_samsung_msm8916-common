@@ -13,7 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
--include vendor/qcom/binaries/msm8916/qcom/qcom-vendor.mk
--include vendor/qcom/binaries/msm8916/drm/drm-vendor.mk
--include vendor/qcom/binaries/msm8916/graphics/graphics-vendor.mk
+$(call inherit-product, vendor/qcom/binaries/msm8916/blobs.mk)
