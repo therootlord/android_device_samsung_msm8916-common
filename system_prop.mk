@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio offload
 PRODUCT_PROPERTY_OVERRIDES += \
-	audio.offload.buffer.size.kb=32 \
+	audio.offload.buffer.size.kb=64 \
 	audio.offload.gapless.enabled=true \
 	audio.offload.min.duration.secs=30 \
 	av.offload.enable=true \
@@ -27,8 +27,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	qcom.bluetooth.soc=smd
 
 # Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-	camera2.portability.force_api=1
+# PRODUCT_PROPERTY_OVERRIDES += \
+#	camera2.portability.force_api=1
 
 # Connectivity Engine
 PRODUCT_PROPERTY_OVERRIDES += \
