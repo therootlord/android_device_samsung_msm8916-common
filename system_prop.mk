@@ -27,8 +27,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	qcom.bluetooth.soc=smd
 
 # Camera
-# PRODUCT_PROPERTY_OVERRIDES += \
-#	camera2.portability.force_api=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	camera2.portability.force_api=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	camera2.portability.force_api=0
 
 # Connectivity Engine
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -117,11 +120,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.rild.nitz_short_ons_2="" \
 	persist.rild.nitz_short_ons_3="" \
 	ril.subscription.types=NV,RUIM \
-	DEVICE_PROVISIONED=1 \
+	ro.telephony.samsung.realcall=true \
 	rild.libpath=/system/lib/libsec-ril.so \
 	ro.multisim.set_audio_params=true \
 	ro.telephony.ril_class=SamsungQcomRIL
-
+#	DEVICE_PROVISIONED=1 \
 # SAMP SPCM
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.config.samp_spcm_enable=true \

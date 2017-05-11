@@ -1,3 +1,4 @@
 #============= mediacodec ==============
 allow mediacodec firmware_file:file { r_file_perms };
 allow mediacodec firmware_file:dir { r_dir_perms };
+allow mediacodec rootfs:lnk_file r_file_perms;
