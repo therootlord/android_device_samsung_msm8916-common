@@ -40,6 +40,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/releasetools/functions.sh:install/bin/functions.sh \
 	$(LOCAL_PATH)/releasetools/postvalidate/resize_system.sh:install/bin/postvalidate/resize_system.sh
 
+# Substratum
+PRODUCT_PACKAGES += \
+	Substratum
+
 # ANT+
 PRODUCT_PACKAGES += \
 	AntHalService \
