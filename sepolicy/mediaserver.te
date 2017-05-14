@@ -1,3 +1,5 @@
+allow mediaserver cameraproxy_service:service_manager find;
+allow mediaserver sensorservice_service:service_manager find;
 allow mediaserver sysfs_camera:dir search;
 allow mediaserver sysfs_camera:file { getattr open read };
 allow mediaserver sysfs_wake_lock:file { open read write };
@@ -5,3 +7,6 @@ allow mediaserver system_data_file:sock_file write;
 allow mediaserver camera_prop:property_service set;
 allow mediaserver snd_data_file:dir { add_name open search write };
 allow mediaserver snd_data_file:file {  getattr open read write create_file_perms };
+allow mediaserver system_file:file execmod; # for libmmjpeg
+allow mediaserver audio_device:chr_file { ioctl open read write };
+allow mediaserver system_prop:property_service set;

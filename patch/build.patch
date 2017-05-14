@@ -1,12 +1,12 @@
 diff --git a/build/core/qcom_utils.mk b/build/core/qcom_utils.mk
-index 40f7886..7e9e2ab 100755
+index d4613b73b..94b66389f 100755
 --- a/build/core/qcom_utils.mk
 +++ b/build/core/qcom_utils.mk
-@@ -9,6 +9,7 @@ QCOM_BOARD_PLATFORMS += msm8226
+@@ -8,6 +8,7 @@ QCOM_BOARD_PLATFORMS += msm7630_fusion
+ QCOM_BOARD_PLATFORMS += msm8226
  QCOM_BOARD_PLATFORMS += msm8660
  QCOM_BOARD_PLATFORMS += msm8909
- QCOM_BOARD_PLATFORMS += msm8952
 +QCOM_BOARD_PLATFORMS += msm8916
- QCOM_BOARD_PLATFORMS += msm8960
- QCOM_BOARD_PLATFORMS += msm8974
- QCOM_BOARD_PLATFORMS += msm8992
+ QCOM_BOARD_PLATFORMS += msm8937
+ QCOM_BOARD_PLATFORMS += msm8952
+ QCOM_BOARD_PLATFORMS += msm8953

@@ -6,3 +6,6 @@ allow system_server touchpanel_sysfs:dir { search };
 allow system_server sensors_efs_file:file { open read };
 allow system_server sysfs_vibeamp:dir search;
 allow system_server sysfs_vibeamp:file { getattr open read write };
+allow system_server wifi_efs_file:dir search;
+allow system_server wifi_efs_file:file r_file_perms;
+allow system_server app_data_file:file rename;
