@@ -45,6 +45,7 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 
+# Keymaster
 KM_IMAGES := \
 	keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
 

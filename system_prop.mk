@@ -4,34 +4,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio encoders
 PRODUCT_PROPERTY_OVERRIDES += \
-	qcom.hw.aac.encoder=true
-
-# Audio offload
-PRODUCT_PROPERTY_OVERRIDES += \
-	audio.offload.buffer.size.kb=64 \
-	audio.offload.gapless.enabled=true \
-	audio.offload.min.duration.secs=30 \
-	av.offload.enable=true \
-	tunnel.audio.encode=false
-
-# Audio voice recording
-PRODUCT_PROPERTY_OVERRIDES += \
-	use.voice.path.for.pcm.voip=true \
-	voice.playback.conc.disabled=true \
-	voice.record.conc.disabled=true \
-	voice.voip.conc.disabled=true
+	qcom.hw.aac.encoder=false
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
 	bluetooth.hfp.client=1 \
 	qcom.bluetooth.soc=smd
-
-# Camera
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	camera2.portability.force_api=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	camera2.portability.force_api=0
 
 # Connectivity Engine
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -43,14 +21,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.data.netmgrd.qos.enable=false \
 	ro.use_data_netmgrd=false
-
-# Fluence
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.fluence.speaker=true \
-	persist.audio.fluence.voicecall=true \
-	persist.audio.fluence.voicerec=false \
-	ro.qc.sdk.audio.fluencetype=none \
-	ro.qc.sdk.audio.ssr=false
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -120,11 +90,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.rild.nitz_short_ons_2="" \
 	persist.rild.nitz_short_ons_3="" \
 	ril.subscription.types=NV,RUIM \
-	ro.telephony.samsung.realcall=true \
+	DEVICE_PROVISIONED=1 \
 	rild.libpath=/system/lib/libsec-ril.so \
 	ro.multisim.set_audio_params=true \
-	ro.telephony.ril_class=SamsungQcomRIL
-#	DEVICE_PROVISIONED=1 \
+	ro.telephony.ril.config=simactivation \
+	ro.telephony.ril_class=MSM8916
+
 # SAMP SPCM
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.config.samp_spcm_enable=true \
@@ -143,3 +114,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Video encoding
 PRODUCT_PROPERTY_OVERRIDES += \
 	vidc.enc.narrow.searchrange=1
+	
+# Sim
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.samsung.realcall=true \
+	ro.multisim.set_audio_params=true
