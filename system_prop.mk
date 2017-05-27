@@ -1,7 +1,3 @@
-# Assistant
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opa.eligible_device=true
-
 # Audio encoders
 PRODUCT_PROPERTY_OVERRIDES += \
 	qcom.hw.aac.encoder=false

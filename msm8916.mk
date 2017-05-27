@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+	audiod \
 	audio.a2dp.default \
 	audio.primary.msm8916 \
 	audio.primary.default \
@@ -51,9 +52,7 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	audio.tms.default \
 	audio.usb.default \
-	audiod \
 	libaudio-resampler \
-	libaudioroute \
 	libaudioutils \
 	libaudiopolicymanager \
 	libqcompostprocbundle \
@@ -101,10 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libtime_genoff
 
-# Connectivity Engine support
-PRODUCT_PACKAGES += \
-	libcnefeatureconfig
-
 # Location, WiDi
 PRODUCT_PACKAGES += \
 	com.android.location.provider \
@@ -151,10 +146,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
 	sensors.default
-
-# Macloader
-PRODUCT_PACKAGES += \
-	macloader
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -211,18 +202,8 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-	curl \
-	libbson \
 	libcurl \
-	ltrace \
-	javax.btobex \
-	tcmiface \
-	tcpdump \
-	libkeyutils \
-	libjpega \
-	libexifa \
 	libstlport \
-	sockev \
 	rmnetcli \
 	librmnetctl \
 	Stk
@@ -269,11 +250,9 @@ endif
 
 # Wifi configuration files
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/wifi/cred.conf:system/etc/wifi/cred.conf \
 	$(LOCAL_PATH)/configs/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
 	$(LOCAL_PATH)/configs/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 	$(LOCAL_PATH)/configs/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
-	$(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	$(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
 	$(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
 	$(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -292,21 +271,27 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-	hostapd \
-	iwconfig \
-	hostapd_cli \
-	libQWiFiSoftApCfg \
 	libqsap_sdk \
-	libwpa_client \
 	libwcnss_qmi \
+	libQWiFiSoftApCfg \
+	hostapd \
 	wcnss_service \
-	wpa_supplicant
+	libwpa_client \
+	wpa_supplicant \
+	wpa_supplicant.conf
 	
 # FM
 PRODUCT_PACKAGES += \
 	FM2 \
 	libqcomfm_jni \
 	qcom.fmradio
+	
+# CRDA
+PRODUCT_PACKAGES += \
+	crda \
+	linville.key.pub.pem \
+	regdbdump \
+	regulatory.bin
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
