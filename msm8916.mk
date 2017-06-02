@@ -27,7 +27,7 @@ CONFIG_PATH := hardware/qcom/audio-caf/msm8916/configs
 -include $(LOCAL_PATH)/system_prop.mk
 
 # Include proprietary blobs
-$(call inherit-product-if-exists, vendor/qcom/binaries/msm8916/blobs.mk)
+$(call inherit-product-if-exists, vendor/samsung/msm8916-common/msm8916-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -130,10 +130,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	keystore.msm8916
 
-# libhealthd.qcom
+# healthd
 PRODUCT_PACKAGES += \
-	libhealthd.qcom \
-	libhealthd
+	libhealthd.cm
 
 # Power HAL
 PRODUCT_PACKAGES += \

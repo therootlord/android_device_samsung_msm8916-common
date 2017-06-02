@@ -71,14 +71,12 @@ BOARD_RIL_CLASS    := ../../../$(LOCAL_PATH)/ril
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
+CM_POWERHAL_EXTENSION := qcom
 #WITH_QC_PERF := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND    := true
 BOARD_CHARGER_SHOW_PERCENTAGE   := true
-# BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-# CHARGING_ENABLED_PATH           := /sys/class/power_supply/battery/batt_lp_charging
 
 # Cpusets
 ENABLE_CPUSETS := true
@@ -101,13 +99,15 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 2048
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
+TARGET_HAVE_NEW_GRALLOC := true
 
 # Encryption
 TARGET_SWV8_DISK_ENCRYPTION := true
 
 # Healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.cm
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
@@ -123,8 +123,8 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_MAX_PARTITIONS := 67
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# Malloc implementation
-#MALLOC_SVELTE := true
+# malloc implementation
+MALLOC_SVELTE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -183,10 +183,9 @@ TARGET_QCOM_MEDIA_VARIANT           := caf
 
 # Qualcomm support
 TARGET_USES_QCOM_BSP := true
-TARGET_GLOBAL_CFLAGS += -DQCOM_BSP
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
-#TARGET_USES_NEW_ION_API := true
+TARGET_USES_NEW_ION_API := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -226,7 +225,3 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Toolchain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
