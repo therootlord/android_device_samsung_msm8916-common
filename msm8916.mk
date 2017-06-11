@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
 
 # Substratum
 PRODUCT_PACKAGES += \
-	Substratum
+	substratum
 
 # Audio
 PRODUCT_PACKAGES += \

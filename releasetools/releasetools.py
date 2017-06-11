@@ -29,13 +29,6 @@ def FullOTA_InstallBegin(info):
 def FullOTA_InstallEnd(info):
     # run installend scripts
     info.script.AppendExtra('assert(run_program("/tmp/install/bin/run_scripts.sh", "installend") == 0);')
-    info.script.AppendExtra('ui_print(" ");')
-    info.script.AppendExtra('ui_print("Flashing Magisk...");')
-    info.script.AppendExtra('ui_print(" ");')
-    info.script.AppendExtra('package_extract_dir("magisk", "/tmp/magisk");')
-    info.script.AppendExtra('run_program("/sbin/busybox", "unzip", "/tmp/magisk/magisk.zip", "META-INF/com/google/android/*", "-d", "/tmp/magisk");')
-    info.script.AppendExtra('run_program("/sbin/sh", "/tmp/magisk/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/magisk/magisk.zip");')
-    info.script.AppendExtra('ui_print(" ");')
 
 def FullOTA_PostValidate(info):
     # run postvalidate scripts
