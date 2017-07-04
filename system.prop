@@ -4,7 +4,6 @@ rild.libargs=-d /dev/smd0
 #Audio
 audio.offload.video=true
 ro.config.vc_call_vol_steps=15
-ro.config.media_vol_steps=30
 av.streaming.offload.enable=true
 audio.offload.min.duration.secs=30
 audio.offload.buffer.size.kb=64

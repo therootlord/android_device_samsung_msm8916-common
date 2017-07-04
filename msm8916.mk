@@ -227,7 +227,6 @@ PRODUCT_PACKAGES += \
 # Audio configuration
 PRODUCT_COPY_FILES += \
 	$(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
-	$(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
 	$(CONFIG_PATH)/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	$(CONFIG_PATH)/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
 	$(CONFIG_PATH)/msm8916_32/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \

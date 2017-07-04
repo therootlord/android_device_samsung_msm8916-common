@@ -113,5 +113,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	
 # Sim
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.telephony.samsung.realcall=true \
 	ro.multisim.set_audio_params=true
+
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-flags=--no-watch-dog
