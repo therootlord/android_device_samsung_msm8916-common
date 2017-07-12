@@ -92,6 +92,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
 	$(LOCAL_PATH)/configs/gps/sap.conf:system/etc/sap.conf
 
+# GPS HAL
+PRODUCT_PACKAGES += \
+	gps.msm8916
+
 # BoringSSL Hacks
 PRODUCT_PACKAGES += \
 	libboringssl-compat
@@ -172,8 +176,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-	frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \

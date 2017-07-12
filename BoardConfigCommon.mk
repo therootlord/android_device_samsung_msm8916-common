@@ -177,8 +177,8 @@ BOARD_HARDWARE_CLASS +=	\
 	hardware/samsung/cmhw
 
 # GPS
-#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8916
-#TARGET_NO_RPC := true
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT           := caf
