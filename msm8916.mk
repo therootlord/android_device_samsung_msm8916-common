@@ -85,10 +85,6 @@ PRODUCT_PACKAGES += \
 	libmm-qcamera \
 	camera.msm8916
 
-# Touch issue workaround
-PRODUCT_PACKAGES += \
-	InputDisabler
-
 # GPS
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
