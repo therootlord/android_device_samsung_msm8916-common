@@ -197,6 +197,9 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     device/samsung/msm8916-common/sepolicy
 
+# Snapdragon LLVM
+TARGET_USE_SDCLANG := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/msm8916-common/recovery/recovery.fstab
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/msm8916-common/recovery/recovery_keys.c
