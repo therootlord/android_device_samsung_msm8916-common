@@ -171,10 +171,10 @@ BOARD_USE_SAMSUNG_COLORFORMAT_NV21 := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS :=	$(LOCAL_PATH)/cmhw
 BOARD_HARDWARE_CLASS +=	\
 	hardware/cyanogen/cmhw \
-	hardware/samsung/cmhw
+	hardware/samsung/cmhw \
+	$(LOCAL_PATH)/cmhw
 
 # GPS
 #BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8916
