@@ -21,8 +21,6 @@ LOCAL_PATH := device/samsung/msm8916-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-CONFIG_PATH := hardware/qcom/audio-caf/msm8916/configs
-
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
@@ -44,7 +42,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-	audiod \
 	audio.a2dp.default \
 	audio.primary.msm8916 \
 	audio.primary.default \
@@ -52,14 +49,15 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	audio.tms.default \
 	audio.usb.default \
+	audiod \
 	libaudio-resampler \
+	libaudioroute \
 	libaudioutils \
 	libaudiopolicymanager \
 	libqcompostprocbundle \
 	libqcomvisualizer \
 	libqcomvoiceprocessing \
 	libqcmediaplayer \
-	libqct_resampler \
 	libtinyalsa \
 	libtinycompress \
 	tinymix \
@@ -134,6 +132,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libhealthd.cm
 
+# Power configuration
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+
 # Power HAL
 PRODUCT_PACKAGES += \
 	power.qcom
@@ -156,6 +158,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
 # Permissions
@@ -209,44 +212,28 @@ PRODUCT_PACKAGES += \
 	librmnetctl \
 	Stk
 
-# OMX
+# Media
 PRODUCT_PACKAGES += \
 	libextmedia_jni \
-	libqcmediaplayer \
-	libOmxVidcCommon \
+	libdashplayer \
+	libdivxdrmdecrypt \
+	libdrmclearkeyplugin \
+	libstagefrighthw
+
+# OpenMAX
+PRODUCT_PACKAGES += \
+	libmm-omxcore \
 	libOmxAacEnc \
 	libOmxAmrEnc \
 	libOmxCore \
 	libOmxEvrcEnc \
 	libOmxQcelp13Enc \
+	libOmxSwVencMpeg4 \
 	libOmxVdec \
 	libOmxVdecHevc \
 	libOmxVenc \
-	libstagefrighthw
-
-# Audio configuration
-PRODUCT_COPY_FILES += \
-	$(CONFIG_PATH)/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
-	$(CONFIG_PATH)/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_sbc.xml:system/etc/mixer_paths_sbc.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_skul.xml:system/etc/mixer_paths_skul.xml \
-	$(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-	$(CONFIG_PATH)/msm8916_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-	$(CONFIG_PATH)/msm8916_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
-	$(LOCAL_PATH)/audio/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-	$(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
-
-ifeq ($(USE_QCOM_MIXER_PATHS), 1)
-PRODUCT_COPY_FILES += \
-	$(CONFIG_PATH)/msm8916_32/mixer_paths.xml:system/etc/mixer_paths.xml
-endif
+	libOmxVidEnc \
+	libOmxVdpp
 
 # Wifi configuration files
 PRODUCT_COPY_FILES += \
