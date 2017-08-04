@@ -40,6 +40,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	substratum
 
+# ANT+
+PRODUCT_PACKAGES += \
+	AntHalService \
+	com.dsi.ant.antradio_library \
+	libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
@@ -98,6 +104,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libtime_genoff
 
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+	libcnefeatureconfig
+
 # Location, WiDi
 PRODUCT_PACKAGES += \
 	com.android.location.provider \
@@ -144,6 +154,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	lights.msm8916
 
+# Macloader
+PRODUCT_PACKAGES += \
+	macloader
+
 # Sensors
 PRODUCT_PACKAGES += \
 	sensors.default
@@ -175,8 +189,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-	frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
+	frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -196,6 +209,7 @@ PRODUCT_PACKAGES += \
 	init.qcom.usb.rc \
 	init.qcom.usb.sh \
 	init.qcom.rc \
+	init.qcom.fm.sh \
 	init.qcom.sh \
 	ueventd.qcom.rc
 
@@ -206,10 +220,14 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
+	curl \
+	libbson \
 	libcurl \
-	libstlport \
-	rmnetcli \
+	tcpdump \
+	libkeyutils \
+	sockev \
 	librmnetctl \
+	rmnetcli \
 	Stk
 
 # Media
@@ -237,9 +255,11 @@ PRODUCT_PACKAGES += \
 
 # Wifi configuration files
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/wifi/cred.conf:system/etc/wifi/cred.conf \
 	$(LOCAL_PATH)/configs/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
 	$(LOCAL_PATH)/configs/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 	$(LOCAL_PATH)/configs/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
+	$(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	$(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
 	$(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
 	$(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -258,14 +278,15 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-	libqsap_sdk \
-	libwcnss_qmi \
-	libQWiFiSoftApCfg \
 	hostapd \
-	wcnss_service \
+	iwconfig \
+	hostapd_cli \
+	libQWiFiSoftApCfg \
+	libqsap_sdk \
 	libwpa_client \
-	wpa_supplicant \
-	wpa_supplicant.conf
+	libwcnss_qmi \
+	wcnss_service \
+	wpa_supplicant
 	
 # FM
 PRODUCT_PACKAGES += \
@@ -273,13 +294,6 @@ PRODUCT_PACKAGES += \
 	libqcomfm_jni \
 	qcom.fmradio
 	
-# CRDA
-PRODUCT_PACKAGES += \
-	crda \
-	linville.key.pub.pem \
-	regdbdump \
-	regulatory.bin
-
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
