@@ -210,7 +210,6 @@ PRODUCT_PACKAGES += \
 	init.qcom.usb.rc \
 	init.qcom.usb.sh \
 	init.qcom.rc \
-	init.qcom.fm.sh \
 	init.qcom.sh \
 	ueventd.qcom.rc
 
